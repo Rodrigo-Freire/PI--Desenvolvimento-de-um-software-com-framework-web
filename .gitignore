@@ -1,0 +1,78 @@
+# Arquivos e diretórios específicos do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambiente virtual do Python (por exemplo, criado com virtualenv ou venv)
+venv/
+env/
+*.env
+
+# Dependências instaladas pelo pip
+lib/
+lib64/
+bin/
+include/
+share/
+*.egg-info/
+.installed.cfg
+*.egg
+*.egg-info
+dist/
+build/
+wheels/
+*.whl
+
+# Arquivos de banco de dados MySQL
+*.sql
+*.sqlite
+*.db
+
+# Arquivos gerados pelo Flask
+instance/
+webapp/__pycache__/
+webapp/*.pyc
+webapp/*.pyo
+
+# Arquivos de log
+*.log
+
+# Arquivos de configuração do servidor web (por exemplo, Apache, Nginx)
+*.conf
+
+# Arquivos de configuração do IDE (por exemplo, PyCharm, VSCode)
+.idea/
+.vscode/
+
+# Arquivos de cache do navegador
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# Arquivos de compilação CSS e JavaScript
+*.css.map
+*.js.map
+
+# Arquivos de saída de build
+dist/
+build/
+*.egg-info/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+pyvenv.cfg
+venv/pyvenv.cfg
+.venv/Scripts/activate
+.venv/Scripts/activate.bat
+.venv/Scripts/Activate.ps1
+.venv/Scripts/deactivate.bat
