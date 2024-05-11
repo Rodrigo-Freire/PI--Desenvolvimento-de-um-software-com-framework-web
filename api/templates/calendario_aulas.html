@@ -1,0 +1,66 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ddd;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #0074D9;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Lista de Aulas</h1>
+
+        <!-- Filtro por data e nome do professor -->
+        <div class="filtro-lateral">
+            <select id="filtro-data">
+                <option value="">Filtrar por data...</option>
+                <!-- Opções de data serão adicionadas dinamicamente com JavaScript -->
+            </select>
+            <select id="filtro-professor">
+                <option value="">Filtrar por professor...</option>
+                <!-- Opções de professor serão adicionadas dinamicamente com JavaScript -->
+            </select>
+        </div>
+
+        <!-- Lista de aulas -->
+        <div class="aulas">
+            <!-- Mensagem de "Nenhuma aula disponível" -->
+            <br>
+            <h4 class="mensagem">Não existem aulas disponíveis.</h4>
+
+            <!-- Tabela de eventos -->
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Nome da Aula</th>
+                        <th>Professor</th>
+                        <th>Link da Aula</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- As linhas da tabela serão adicionadas dinamicamente com JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+{% endblock %}

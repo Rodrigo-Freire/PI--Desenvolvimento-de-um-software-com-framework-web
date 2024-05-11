@@ -52,11 +52,13 @@
     <div class="header">
         <h1>Tutor Match</h1>
         <div>
-            <a href="/"> <button class="btn btn-primary">Home</button> </a>
-            <a href="{{ url_for('calendario_aulas')}}"><button class="btn btn-secondary">Calendário de
+            <a href="/"> <button type="button" class="btn btn-primary">Home</button> </a>
+            <a href="{{ url_for('calendario_aulas')}}"><button type="button" class="btn btn-dark">Calendário de
                     Aulas</button></a>
-            <a href="{{url_for('login')}}"> <button class="btn btn-primary">Login</button> </a>
-            <button class="btn btn-secondary">Política de Privacidade</button>
+            <a href="{{url_for('login')}}"> <button type="button" class="btn btn-primary">Login</button> </a>
+            <a href="{{ url_for('politica_privacidade') }}"><button type="button" class="btn btn-dark">Política de Privacidade</button></a>
+            <!-- <a href="{{url_for('login')}}"> </a> -->
+            <button type="button" class="btn btn-primary">Logout</button> 
         </div>
     </div>
     <div class="container">

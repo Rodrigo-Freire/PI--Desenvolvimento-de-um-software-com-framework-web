@@ -76,3 +76,5 @@ venv/pyvenv.cfg
 .venv/Scripts/activate.bat
 .venv/Scripts/Activate.ps1
 .venv/Scripts/deactivate.bat
+.vercel
+api/config.py
