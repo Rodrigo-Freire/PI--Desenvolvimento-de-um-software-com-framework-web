@@ -1,25 +1,21 @@
 {% extends "template.html" %}
 {% block conteudo %}
 <div class="container">
+        
+        <!-- código omitido -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul id="messages" class="list-unstyled">
+            {% for message in messages %}
+            <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <!-- código omitido -->
+
     <h1>Criar Conta</h1>
     <form action="{{ url_for('cadastro_bd_conta') }}" method="POST" enctype="multipart/form-data">
-        <!-- <p><label>Nome Completo:</label> <input class="form-control" type="text" name="full_name"
-                placeholder="Ex: João da Silva" required></p>
-        <p><label>Data de Nascimento:</label> <input class="form-control" type="date" name="birthdate" required></p>
-        <p><label>Nome de Usuário:</label> <input class="form-control" type="text" name="username"
-                placeholder="Ex: joaosilva" required></p>
-        <p><label>Senha:</label> <input class="form-control" type="password" name="password" placeholder="Mínimo 8 caracteres"
-                required></p>
-        <p><label>Confirmar Senha:</label> <input class="form-control" type="password" name="confirm_password"
-                placeholder="Repita a senha" required></p>
-        <p><label>E-mail:</label> <input class="form-control" type="email" name="email"
-                placeholder="Ex: exemplo@email.com" required></p>
-        <p><label>Tipo de Usuário:</label>
-            <select class="form-control" name="user_type">
-                <option value="aluno">Aluno</option>
-                <option value="professor">Professor</option>
-            </select>
-        </p> -->
         <fieldset>
                 {{ form.csrf_token() }}
                 <div class="form-group">
@@ -48,15 +44,13 @@
                 </div>
         </fieldset>
         <br>
-        <div class="politica-privacidade">
+        <div>
                 <input type="checkbox" id="concordar-politica" required>
                 <label for="concordar-politica">Ao se cadastrar, você declara estar de acordo com nossa <a href="{{ url_for('politica_privacidade') }}" target="_blank">Política de Privacidade</a>.</label>
                 <br>
                 {{ form.salvar(class="btn btn-primary") }}
                  <a class="btn btn-danger" href="{{  url_for('index') }}">Voltar</a>
         </div>
-        <!-- Botão de cadastro -->
-        <!-- <p><button class="btn btn-primary" type="submit">Cadastrar</button></p> -->
     </form>
 </div>
 {% endblock %}

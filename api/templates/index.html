@@ -1,7 +1,20 @@
 {% extends "template.html" %}
 {% block conteudo %}
 <div class="container">
-    <h2 class="text-start">Bem-vindo ao Tutor Match!</h2>
+    
+    <!-- código omitido -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul id="messages" class="list-unstyled">
+        {% for message in messages %}
+        <li class="alert alert-success">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <!-- código omitido -->
+    
+        <h2 class="text-start">Bem-vindo ao Tutor Match!</h2>
     <p>O Tutor Match é uma plataforma digital criada com o objetivo de conectar professores e alunos do CEU Parque
         Bristol, proporcionando oportunidades de aprendizado e desenvolvimento para ambas as partes.</p>
     <p>Nossa missão é promover a troca de conhecimento e experiências, possibilitando que os professores compartilhem

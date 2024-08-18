@@ -17,13 +17,25 @@
     <!-- código omitido -->
 
     <h1>Faça seu login</h1>
-    <form method="POST">
+    <form method="POST" action="{{ url_for('autenticar') }}">
         <input type="hidden" name="proxima" value="{{ proxima }}">
-        <p><label>Nome de usuário:</label> <input class="form-control" type="text" name="usuario" required></p>
-        <p><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
-        <p><button class="btn btn-primary" type="submit">Entrar</button></p>
+        {{ form.csrf_token() }}
+        <div>
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control") }}
+        </div>
+        <div>
+            {{ form.senha.label(class="form-label") }}
+            {{ form.senha(class="form-control") }}
+        </div>
+        <br>
+        <div>
+            {{ form.login(class="btn btn-primary") }}
+            <br>
+            <br>
+            <p>Não tem conta? <a href="{{ url_for('criar_conta') }}">Criar conta</a> </p>
+        </div>
     </form>
 
-    <p>Não tem conta? <a href="{{ url_for('criar_conta') }}">Criar conta</a> </p>
 </div>
 {% endblock %}
